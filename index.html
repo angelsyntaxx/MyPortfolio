@@ -1,120 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Employee Management System</title>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Octavia Maake — Web & Software Developer | Administrator</title>
+    <meta name="description" content="Octavia Maake — Web & Software Developer & Administrator. Available for freelancing and short/long-term contracts. HTML, CSS, JavaScript, React, Node.js." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%23ff1493%22/></svg>">
+    <meta property="og:title" content="Octavia Maake — Web & Software Developer" />
+    <meta property="og:description" content="Available for freelancing and short/long-term contracts." />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Person",
+      "name":"Octavia Maake",
+      "jobTitle":"Web & Software Developer | Administrator",
+      "email":"mailto:1octom16@gmail.com",
+      "telephone":"+27-81-436-8094",
+      "url":"https://1octom16.github.io/My-Portfolio/",
+    
+      "sameAs":[]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Desktop Nav -->
+    <nav id="desktop-nav" class="elevate">
+      <div class="logo">Octavia <span class="accent">Maake</span></div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certs">Certifications</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌓</button></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- LOGIN PAGE -->
-<div id="loginPage" class="login-page">
-  <div class="login-card">
-    <h1>EMS Portal</h1>
-    <p class="tagline">Please sign in to continue</p>
-    <form id="loginForm" class="login-form" novalidate>
-      <label for="username" class="sr-only">Username</label>
-      <input type="text" id="username" placeholder="Username" autocomplete="username" required autofocus />
+    <!-- Mobile Nav -->
+    <nav id="hamburger-nav" class="elevate">
+      <div class="logo">Octavia <span class="accent">Maake</span></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#certs" onclick="toggleMenu()">Certifications</a></li>
+          <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li style="list-style:none;"><button id="theme-toggle-m" class="theme-toggle" aria-label="Toggle theme">🌓</button></li>
+        </div>
+      </div>
+    </nav>
 
-      <label for="password" class="sr-only">Password</label>
-      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required />
+    <!-- Hero / Profile -->
+    <section id="profile" class="container">
+      <div class="section__pic-container">
+        <img src="./assets/tia1.jpg" alt="Portrait of Octavia Maake" />
+      </div>
+      <div class="section__text animated-profile">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Octavia Maake</h1>
+        <p class="section__text__p2">Web & Software Developer · Administrator</p>
 
-      <button type="submit" class="btn-primary">Sign In</button>
-    </form>
+        <div class="availability">
+          <span class="ping"></span>
+          Available for <strong>freelancing</strong> and <strong>short/long‑term contracts</strong>
+        </div>
 
-    <p class="register-prompt">
-      No account? <button id="showRegisterBtn" class="link-btn">Register here</button>
-    </p>
-  </div>
-</div>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/OM MAAKE-CV.pdf')">
+            Download CV (PDF)
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
+            Contact Info
+          </button>
+        </div>
 
-<!-- REGISTER PAGE -->
-<div id="registerPage" class="login-page" style="display:none;">
-  <div class="login-card">
-    <h1>Register</h1>
-    <p class="tagline">Create a new user account</p>
-    <form id="registerForm" class="login-form" novalidate>
-      <label for="regUsername" class="sr-only">Username</label>
-      <input type="text" id="regUsername" placeholder="Username" required />
+        <ul class="quick-facts">
+          <li>Pretoria & Durban</li>
+          <li>Immediate notice period</li>
+        </ul>
 
-      <label for="regPassword" class="sr-only">Password</label>
-      <input type="password" id="regPassword" placeholder="Password" required />
+        <div id="socials-container">
+          <button class="chip" onclick="location.href='mailto:1octom16@gmail.com'">📧 Email</button>
+          <button class="chip" onclick="location.href='tel:+27814368094'">📞 Call</button>
+        </div>
+      </div>
+    </section>
 
-      <label for="regRole" class="sr-only">Role</label>
-      <select id="regRole" required>
-        <option value="" disabled selected>Select Role</option>
-        <option value="Admin">Admin</option>
-        <option value="Staff">Staff</option>
-      </select>
+    <!-- About -->
+    <section id="about" class="container">
+      <p class="section__text__p1">Get To Know More</p>
+      <h2 class="title underlined">About Me</h2>
 
-      <button type="submit" class="btn-primary">Register</button>
-    </form>
+      <div class="section-container">
+        <div class="about-details-container">
+          <div class="text-container readable">
+            <p>
+              I’m a junior Full-Stack Web and Software Developer with a passion for building clean, functional and user-friendly digital experiences. I work with HTML, CSS, JavaScript, React, Java and GitHub to create responsive websites and practical software solutions.<br> <br>
 
-    <p class="register-prompt">
-      Already have an account? <button id="showLoginBtn" class="link-btn">Sign in here</button>
-    </p>
-  </div>
-</div>
+I have a strong foundation in problem-solving, database basics and object-oriented programming, supported by real-world experience in IT and administrative environments. This gives me a unique ability to combine technical precision with organization, communication and attention to detail.<br><br>
 
-<!-- EMPLOYEE MANAGEMENT APP -->
-<div id="app" class="app-container" style="display:none;">
-  <header>
-    <h1>Employee Management System</h1>
-    <div>
-      <span id="welcomeMsg"></span>
-      <button id="logoutBtn" title="Logout">Logout</button>
+I’m a fast learner who enjoys turning ideas into working applications and continuously improving my skills through hands-on projects. I’m currently seeking opportunities to grow as a developer and contribute to meaningful software and web solutions.
+            </p>
+          </div>
+
+          <div class="about-containers">
+            <div class="details-card">
+              <h3>Contact</h3>
+              <ul>
+                <li><strong>Email:</strong> <a href="mailto:1octom16@gmail.com">1octom16@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+27814368094">+27 81 436 8094</a></li>
+                <li><strong>Location:</strong> Pretoria & Durban</li>
+              </ul>
+            </div>
+            <div class="details-card">
+              <h3>Languages</h3>
+              <ul>
+                <li>English — Good (Verbal & Written)</li>
+                <li>Afrikaans — Fair (Comprehensive)</li>
+                <li>Sepedi — Fair (Comprehensive)</li>
+                <li>Zulu — Fair (Comprehensive)</li>
+              </ul>
+            </div>
+            <div class="details-card">
+              <h3>References</h3>
+              <ul>
+                <li>Ms. Sphindile Khumalo — <a href="tel:+27609735122">+27 60 973 5122</a></li>
+                <li>Ms. Elizabeth Tshivhotshwa — <a href="tel:+27714785139">+27 71 478 5139</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container">
+      <p class="section__text__p1">What I Work With</p>
+      <h2 class="title underlined">Skills</h2>
+
+      <div class="pill-grid">
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">React</span>
+        <span class="pill">Java</span>
+        <span class="pill">Git/GitHub</span>
+        <span class="pill">Basic SQL</span>
+        <span class="pill">Microsoft Office</span>
+        <span class="pill">Database Management</span>
+        <span class="pill">Time Management</span>
+        <span class="pill">Problem‑Solving</span>
+        <span class="pill">Communication</span>
+        <span class="pill">Active Listening</span>
+        <span class="pill">Multitasking</span>
+        <span class="pill">Fast Learner</span>
+      </div>
+    </section>
+
+        <!-- Projects -->
+    <section id="projects" class="container">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h2 class="title underlined">Projects</h2>
+
+      <div class="cards">
+        <!-- Weather & News Dashboard -->
+        <article class="card reveal">
+          <header>
+            <h3>Employees Management System</h3>
+            <span class="badge">Web App</span>
+          </header>
+          <p class="muted">
+            A comprehensive system for managing employee information, including data entry, updates, and reporting.
+          </p>
+          <ul class="feature-list">
+            <li>Employee data entry and management</li>
+            <li>Employee profile updates and reporting</li>
+            <li>Employee data export and import</li>
+            <li>Employee data filtering and sorting</li>
+            <li>Employee Attendance tracking</li>
+          </ul>
+          <div class="meta">
+            <strong>Stack:</strong> HTML · CSS · JavaScript · Java backend · MySQL database  
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-color-2" href="https://github.com/angelsyntaxx/Employee-Management-System-.git" target="_blank">GitHub</a>
+            <a class="btn btn-color-2" href="https://employees-managementsystem.netlify.app/" target="_blank">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- Expense Tracker -->
+        <article class="card reveal">
+          <header>
+            <h3>Expense Tracker with Data Analysis</h3>
+            <span class="badge">Java Desktop/Web App</span>
+          </header>
+          <p class="muted">
+            Track expenses, generate reports, and export data for records.
+          </p>
+          <ul class="feature-list">
+            <li>User login & authentication</li>
+            <li>Add, edit, delete expense entries with categories/dates</li>
+            <li>Summary reports (monthly, yearly)</li>
+            <li>Graphs for category spending breakdown</li>
+            <li>Export to Excel/CSV</li>
+            <li>Budget goal alerts & savings vs. expenses dashboard</li>
+          </ul>
+          <div class="meta">
+            <strong>Stack:</strong> Java · JavaFX/Swing · MySQL/SQLite · Apache POI · JFreeChart
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-color-2" href="#" target="_blank">GitHub</a>
+            <a class="btn btn-color-2" href="#" target="_blank">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- Meeting/Tasks Scheduler -->
+        <article class="card reveal">
+          <header>
+            <h3>Meeting/Tasks Scheduler with Reminders</h3>
+            <span class="badge">Web App</span>
+          </header>
+          <p class="muted">
+            Schedule meetings, track tasks, and send reminders with Google Calendar sync.
+          </p>
+          <ul class="feature-list">
+            <li>User authentication via Google OAuth</li>
+            <li>Add meetings/tasks with details & participants</li>
+            <li>Auto sync with Google Calendar API</li>
+            <li>Email/browser notifications for reminders</li>
+            <li>Task priority & color-coded events</li>
+            <li>Recurring meeting support</li>
+          </ul>
+          <div class="meta">
+            <strong>Stack:</strong> HTML · CSS · JavaScript · Java backend · Google Calendar API
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-color-2" href="#" target="_blank">GitHub</a>
+            <a class="btn btn-color-2" href="#" target="_blank">Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Certifications -->
+    <section id="certs" class="container">
+      <p class="section__text__p1">Proof of Skills</p>
+      <h2 class="title underlined">Certifications</h2>
+      <ul class="tick-list">
+        <li>CompTIA Security+</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="container">
+      <p class="section__text__p1">Formal Learning</p>
+      <h2 class="title underlined">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Hoërskool Pretoria Wes — Grade 12</h3>
+            <p class="muted">Completed: 2023 With Bachelors Degree</p>
+            <p>Subjects: English HL, Afrikaans FAL, Mathematical Literacy, Life Orientation, Accounting, Business Studies & Computer Applications Technology</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+    <p class="section__text__p1">Get in Touch</p>
+    <h2 class="title underlined">Contact Me</h2>
+
+    <div class="contact-grid">
+      <div class="details-card">
+        <h2>Hire Me</h2>
+        <form id="whatsapp-form">
+          <div class="fs-field">
+            <label for="wa-name"><strong>Name</strong></label>
+            <input id="wa-name" type="text" required placeholder="Your full name" />
+          </div>
+
+          <div class="fs-field">
+            <label for="wa-email"><strong>Email</strong></label>
+            <input id="wa-email" type="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="fs-field">
+            <label for="wa-phone"><strong>Phone</strong></label>
+            <input id="wa-phone" type="tel" placeholder="+27..." />
+          </div>
+
+          <div class="fs-field">
+            <label for="wa-subject"><strong>Subject</strong></label>
+            <input id="wa-subject" type="text" placeholder="Project Inquiry, Job Offer..." />
+          </div>
+
+          <div class="fs-field">
+            <label for="wa-message"><strong>Message</strong></label>
+            <textarea id="wa-message" required placeholder="Write your message..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-color-1">Send via WhatsApp</button>
+        </form>
+      </div>
     </div>
-  </header>
 
-  <section id="adminControls" style="display:none;">
-    <h2>Add Employee</h2>
-    <form id="addEmployeeForm">
-      <input type="text" id="empName" placeholder="Employee Name" required />
-      <input type="text" id="empRole" placeholder="Role" required />
-      <input type="text" id="empDept" placeholder="Department" required />
-      <button type="submit">Add Employee</button>
-    </form>
+    <p class="muted smallprint">
+      Health: Excellent • Notice: Immediately • Nationality: South African
+    </p>
   </section>
 
-  <section>
-    <h2>Employees</h2>
-    <input type="text" id="searchInput" placeholder="Search employees by name, role or department..." style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1.5px solid #ccd6dd;" />
-    <table id="employeeTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Department</th>
-          <th>Mark Attendance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Employees will be listed here -->
-      </tbody>
-    </table>
-  </section>
+  <footer>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p>© <span id="year"></span> Octavia Maake. All Rights Reserved.</p>
+  </footer>
 
-  <section>
-    <h2>Attendance Tracking</h2>
-    <label for="attendanceDate">Select Date:</label>
-    <input type="date" id="attendanceDate" />
-    <button id="saveAttendanceBtn">Save Attendance</button>
-  </section>
-
-  <section id="attendanceReport">
-    <h2>Monthly Attendance Report</h2>
-    <label for="reportMonth">Select Month:</label>
-    <input type="month" id="reportMonth" />
-    <button id="generateReportBtn">Generate Report</button>
-    <div id="reportContent"></div>
-    <button id="downloadPdfBtn" style="display:none;">Download PDF</button>
-    <button id="downloadCsvBtn" style="display:none; margin-left:10px;">Download CSV</button>
-  </section>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
