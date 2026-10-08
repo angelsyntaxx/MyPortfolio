@@ -342,7 +342,7 @@ a:active {
   text-decoration: underline;     /* optional: subtle affordance */
 }
 /* =======================
-   Cards / Projects
+   Projects
    ======================= */
 .cards { display: grid; gap: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .card {
